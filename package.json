@@ -1,0 +1,65 @@
+{
+  "name": "commit-checklist",
+  "displayName": "Commit Checklist",
+  "description": "To enable developers to always maintain production ready code during each commit to reduce the number of revisions and bugs that may enter your code by enforcing a checklist that must be reviewed during each commit.",
+  "version": "1.0.0",
+  "engines": {
+    "vscode": "^1.94.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "commitChecklist.commitWithChecklist",
+        "title": "Commit with Checklist"
+      },
+      {
+        "command": "commitChecklist.setGlobalChecklist",
+        "title": "Set Global Commit Checklist"
+      }
+    ],
+    "configuration": {
+      "type": "object",
+      "title": "Commit Checklist Configuration",
+      "properties": {
+        "commitChecklist.jsonFilePath": {
+          "type": "string",
+          "default": "",
+          "description": "Path to the JSON file containing the commit checklist."
+        }
+      }
+    },
+    "keybindings": [
+      {
+        "command": "commitChecklist.commitWithChecklist",
+        "key": "ctrl+shift+c",
+        "when": "editorTextFocus"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src",
+    "test": "vscode-test"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.94.0",
+    "@types/mocha": "^10.0.8",
+    "@types/node": "20.x",
+    "@typescript-eslint/eslint-plugin": "^8.7.0",
+    "@typescript-eslint/parser": "^8.7.0",
+    "eslint": "^9.11.1",
+    "typescript": "^5.6.2",
+    "@vscode/test-cli": "^0.0.10",
+    "@vscode/test-electron": "^2.4.1"
+  }
+}
