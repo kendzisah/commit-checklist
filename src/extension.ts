@@ -1,5 +1,3 @@
-// src/extension.ts
-
 import * as vscode from 'vscode';
 import { registerCommitCommand } from './commands/commitCommand';
 import { registerSetGlobalChecklistCommand } from './commands/setGlobalChecklistCommand';

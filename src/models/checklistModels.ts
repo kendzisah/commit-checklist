@@ -1,5 +1,3 @@
-// src/models/checklistModels.ts
-
 export interface ChecklistItem {
   question: string;
   subItems?: ChecklistItem[];

@@ -1,5 +1,3 @@
-// src/commands/setGlobalChecklistCommand.ts
-
 import * as vscode from 'vscode';
 import { readJsonFile } from '../utils/fileUtils';
 import { ChecklistGroup } from '../models/checklistModels';

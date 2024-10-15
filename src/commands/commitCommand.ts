@@ -1,5 +1,3 @@
-// src/commands/commitCommand.ts
-
 import * as vscode from 'vscode';
 import { ChecklistService } from '../services/checklistService';
 import { ChecklistGroup } from '../models/checklistModels';
@@ -28,7 +26,7 @@ export function registerCommitCommand(context: vscode.ExtensionContext): void {
       return;
     }
 
-    const repository = git.repositories[0]; // Adjust if necessary
+    const repository = git.repositories[0];
 
     if (repository) {
       try {
