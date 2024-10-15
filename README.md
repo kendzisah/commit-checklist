@@ -1,71 +1,155 @@
-# commit-checklist README
+# Commit Checklist Extension for Visual Studio Code
 
-This is the README for your extension "commit-checklist". After writing up a brief description, we recommend including the following sections.
+## Overview
+
+The Commit Checklist extension for Visual Studio Code helps developers maintain production-ready code by enforcing a customizable checklist that must be reviewed during each commit. This ensures that best practices are consistently followed, reducing the number of revisions and potential bugs introduced into the codebase.
 
 ## Features
 
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
+- **Customizable Checklists**: Define global or project-specific checklists tailored to your team's needs.
+- **Pre-Commit Verification**: Review and complete the checklist before committing changes.
+- **User-Friendly Interface**: An intuitive webview within VS Code for easy interaction.
+- **Integration with Git**: Seamlessly integrates with Git commands to enhance your existing workflow.
+- **Status Bar Access**: Quick access to the checklist via Key binds or Command Palette in VS Code.
 
-For example if there is an image subfolder under your extension project workspace:
+## Installation
 
-\!\[feature X\]\(images/feature-x.png\)
+### From Visual Studio Marketplace
 
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
+1. Open Visual Studio Code.
+2. Go to the Extensions view (Ctrl+Shift+X or Cmd+Shift+X on macOS).
+3. Search for "Commit Checklist".
+4. Click Install on the extension named "Commit Checklist" by [Your Publisher Name].
+5. Reload VS Code if prompted.
 
-## Requirements
+## Usage
 
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
+### Accessing the Commit Checklist
+
+- **Via Key Bind**: Ctrl + Shift + C to open the commit checklist and commit changes 
+- **Via Command Palette**: 
+  1. Open the Command Palette (Ctrl+Shift+P or Cmd+Shift+P on macOS).
+  2. Type "Commit with Checklist" and select the command.
+
+### Completing the Checklist
+
+1. Open the Checklist.
+2. Answer pre-questions for each section.
+3. Complete all checklist items in applicable sections.
+4. Click "Submit" when finished.
+
+### Committing Changes
+
+- Use the "Commit" button in the extension (if available).
+- Or use VS Code's built-in Git features after completing the checklist.
+
+## Configuration
+
+### Setting Up a Global Checklist
+
+1. Open the Command Palette.
+2. Run "Set Global Commit Checklist" command.
+3. Provide the path to your JSON checklist file.
+
+### Project-Specific Checklist
+
+Create a `commit-checklist.json` file in your project root.
+
+### Checklist JSON Format
+
+```json
+[
+  {
+    "title": "Section Title",
+    "preQuestion": "Is this section applicable?",
+    "required": false,
+    "items": [
+      {
+        "question": "First item to check",
+        "subItems": [
+          {
+            "question": "Sub-item to check"
+          }
+        ]
+      },
+      {
+        "question": "Second item to check"
+      }
+    ]
+  }
+]
+```
 
 ## Extension Settings
 
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
+- `commitChecklist.jsonFilePath`: Path to the global commit checklist JSON file.
 
-For example:
+## Keybindings
 
-This extension contributes the following settings:
+- Commit with Checklist: `Ctrl+Shift+C` (Cmd+Shift+C on macOS)
 
-* `myExtension.enable`: Enable/disable this extension.
-* `myExtension.thing`: Set to `blah` to do something.
+## Development
 
-## Known Issues
+### Running Locally
 
-Calling out known issues can help limit users opening duplicate issues against your extension.
+1. Clone the repository:
+   ```
+   git clone https://github.com/kendzisah/commit-checklist.git
+   ```
+2. Install dependencies:
+   ```
+   cd commit-checklist
+   npm install
+   ```
+3. Open in VS Code:
+   ```
+   code .
+   ```
+4. Press F5 to start the Extension Development Host.
 
-## Release Notes
+### Building the Extension
 
-Users appreciate release notes as you update your extension.
+1. Compile TypeScript:
+   ```
+   npm run compile
+   ```
+2. Package the extension:
+   ```
+   vsce package
+   ```
 
-### 1.0.0
+## License
 
-Initial release of ...
+MIT
 
-### 1.0.1
+## Contributing
 
-Fixed issue #.
+Contributions are welcome! To contribute:
 
-### 1.1.0
+1. Fork the Repository on GitHub.
 
-Added features X, Y, and Z.
+2. Create a New Branch for your feature or bug fix:
 
----
+   ```bash
+   git checkout -b feature/your-feature-name
+   ```
 
-## Following extension guidelines
+3. Make Your Changes and Commit:
 
-Ensure that you've read through the extensions guidelines and follow the best practices for creating your extension.
+   ```bash
+   git commit -m "Description of your changes"
+   ```
 
-* [Extension Guidelines](https://code.visualstudio.com/api/references/extension-guidelines)
+4. Push to Your Fork:
 
-## Working with Markdown
+   ```bash
+   git push origin feature/your-feature-name
+   ```
 
-You can author your README using Visual Studio Code. Here are some useful editor keyboard shortcuts:
+5. Submit a Pull Request on GitHub.
 
-* Split the editor (`Cmd+\` on macOS or `Ctrl+\` on Windows and Linux).
-* Toggle preview (`Shift+Cmd+V` on macOS or `Shift+Ctrl+V` on Windows and Linux).
-* Press `Ctrl+Space` (Windows, Linux, macOS) to see a list of Markdown snippets.
+## Support
 
-## For more information
-
-* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
-
-**Enjoy!**
+If you need assistance or have questions about using the extension, you can: 
+- Open an issue on GitHub.
+- Contact Me: dzisahken10@gmail.com
