@@ -4,6 +4,10 @@
   "description": "To enable developers to always maintain production ready code during each commit to reduce the number of revisions and bugs that may enter your code by enforcing a checklist that must be reviewed during each commit.",
   "version": "1.0.0",
   "publisher": "CenoStudios",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kendzisah/commit-checklist"
+  },
   "engines": {
     "vscode": "^1.94.0"
   },
